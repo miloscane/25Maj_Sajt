@@ -43,5 +43,12 @@ http.listen(process.env.PORT, function(){
 var mainFileVersion	=	1.1;
 
 server.get('/',function(req,res){
-	res.render('home',{});
+	res.render('home',{
+		fileVersion: mainFileVersion,
+		title: "Home",
+		ogtitle: "Home",
+		description: "Description",
+		image: "imageurl",
+		url: "url"
+	});
 });
