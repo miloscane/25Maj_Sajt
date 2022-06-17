@@ -46,7 +46,7 @@ server.get('/',function(req,res){
 	res.render('home',{
 		fileVersion: mainFileVersion,
 		title: "Home",
-		ogtitle: "Home",
+		ogtitle: "Home", 
 		description: "Description",
 		image: "imageurl",
 		url: "url"
