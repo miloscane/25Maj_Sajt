@@ -724,6 +724,23 @@ input[type=number] {
 	opacity: 0.9;
 }
 
+#map{
+	height: 400px;
+	position: relative;
+	z-index: 150;
+}
+
+.navButton{
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	z-index: 175;
+}
 
 
 
