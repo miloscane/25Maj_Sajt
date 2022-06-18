@@ -45,10 +45,10 @@ var mainFileVersion	=	1.1;
 server.get('/',function(req,res){
 	res.render('home',{
 		fileVersion: mainFileVersion,
-		title: "Home",
-		ogtitle: "Home", 
-		description: "Description",
-		image: "imageurl",
-		url: "url"
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
 	});
 });
