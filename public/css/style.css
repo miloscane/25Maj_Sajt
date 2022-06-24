@@ -17,7 +17,7 @@ html {
 body{
     margin:0;
     font-family: 'Lato', sans-serif;
-    color: rgb(50,50,50);
+    color: rgb(75,75,75);
     font-size: 16px;
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{
@@ -279,11 +279,11 @@ input[type=number] {
 	top: 32px;
 	left: 0;
 	right: 0;
-	-webkit-transition: all ease 0.6s;
-	-moz-transition: all ease 0.6s;
-	-ms-transition: all ease 0.6s;
-	-o-transition: all ease 0.6s;
-	transition: all ease 0.6s;
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	transition: all ease 0.3s;
 	display: none;
 	background-color: rgb(255,255,255);
 	text-align: center;
@@ -292,6 +292,7 @@ input[type=number] {
 	border-left: 1px solid rgb(255,255,0);
 	border-right: 1px solid rgb(255,255,0);
 	border-bottom: 1px solid rgb(255,255,0);
+	opacity: 0;
 }
 
 .headerNavigation .menuWrap .menuItemWrap a{
@@ -314,6 +315,7 @@ input[type=number] {
 
 .headerNavigation .menuWrap .menuItemWrap:hover .subMenu{
 	display: block;
+	opacity: 1;
 }
 
 
@@ -351,6 +353,25 @@ input[type=number] {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+}
+
+.pageFixedTitle{
+	top: 200px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	position: fixed;
+	z-index: 60;
+	font-size: 40px;
+	font-weight: 700;
+	color: rgb(255,255,0);
+	padding: 10px;
+	background-color: rgba(47,78,176,0.7);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .pageHeaderSpace{
@@ -742,9 +763,156 @@ input[type=number] {
 	z-index: 175;
 }
 
+.documents{
+	text-align: center;
+}
+
+.documents .document{
+	display: inline-block;
+	vertical-align: middle;
+	background: linear-gradient(180deg, rgba(47,78,176,1) 26%, rgba(24,40,91,1) 100%);
+	border: 1px solid rgb(255,255,255);
+	width: 290px;
+	margin: 10px;
+	color: rgb(255,255,255);
+	cursor: pointer;
+	-webkit-transition: all ease 0.4s;
+	-moz-transition: all ease 0.4s;
+	-ms-transition: all ease 0.4s;
+	-o-transition: all ease 0.4s;
+	transition: all ease 0.4s;
+}
+
+.documents .document .documentType{
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: right bottom;
+}
+
+.documents .document .documentType .text{
+	padding: 10px 30px;
+	height: 140px;
+	overflow: hidden;
+}
+
+.documents .document:hover{
+	color: rgb(255,255,0);
+	border: 1px solid rgb(255,255,0);
+}
+
+.sideBySideText{
+	font-size: 0px;
+	text-align: left;
+}
+
+.sideBySideText .inline{
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	padding: 15px;
+	
+}
+
+.readingText{
+	font-size: 18px;
+}
+
+.grey{
+	background-color: rgb(240,240,240);
+}
+
+.whiteBoxTransparent{
+	background-color: rgba(255,255,255,0.8);
+	color: rgb(47,78,176);
+	text-align: center;
+	padding: 15px;
+}
+
+.listTitle{
+	font-weight: 600;
+	font-size: 22px;
+	margin-bottom: 2px;
+}
+
+.list{
+	list-style-type: circle;
+	font-size: 18px;
+	margin-top: 0px;
+	padding-left: 30px;
+}
+
+.list p{
+	font-size: 18px;
+	margin: 2px 0;
+
+}
+
+.smallItalic{
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+.nabavka .year{
+	font-size: 40px;
+	color: rgb(47,78,176);
+}
+
+.nabavka{
+	padding: 20px;
+}
+
+.nabavke .nabavka:nth-child(even){
+	background-color: rgb(240,240,240);
+}
+
+.textByImage{
+	font-size: 0;
+	text-align: center;
+}
 
 
+.textByImage .textWrap, .textByImage .imageWrap{
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+	padding: 5px;
+}
 
+.textByImage .textWrap{
+	font-size: 18px;
+	text-align: left;
+}
+
+.textByImage .textWrap .title{
+	font-size: 22px;
+	font-weight: 800;
+	color: rgb(47,78,176);
+	margin-bottom: 10px;
+}
+
+.terminiTable{
+	border-collapse: collapse;
+	border: 1px solid rgb(47,78,176);
+	font-size: 18px;
+}
+
+
+.terminiTable td{
+	border: 1px solid rgb(47,78,176);
+	padding: 5px;
+}
+
+.terminiTable tr:first-child td{
+	color: rgb(255,255,255);
+	font-weight: 600;
+	background: linear-gradient(0deg, rgba(47,78,176,1) 26%, rgba(24,40,91,1) 100%);
+}
+
+.boldBlue{
+	font-weight: 600;
+	color: rgb(47,78,176);
+}
 
 
 
