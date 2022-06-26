@@ -108,6 +108,72 @@ server.get('/besplatni-programi-penzioneri',function(req,res){
 	});
 });
 
+server.get('/bazeni-na-otvorenom',function(req,res){
+	res.render('bazeni-na-otvorenom',{
+		fileVersion: mainFileVersion,
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
+	});
+});
+
+server.get('/zatvoreni-bazen',function(req,res){
+	res.render('zatvoreni-bazen',{
+		fileVersion: mainFileVersion,
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
+	});
+});
+
+server.get('/wellness-centar',function(req,res){
+	res.render('wellness-centar',{
+		fileVersion: mainFileVersion,
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
+	});
+});
+
+server.get('/sportska-sala',function(req,res){
+	res.render('sportska-sala',{
+		fileVersion: mainFileVersion,
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
+	});
+});
+
+server.get('/kombo-paketi',function(req,res){
+	res.render('kombo-paketi',{
+		fileVersion: mainFileVersion,
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
+	});
+});
+
+server.get('/skolica-plivanja',function(req,res){
+	res.render('skolica-plivanja',{
+		fileVersion: mainFileVersion,
+		title: "SRC 25.Maj",
+		ogtitle: "SRC 25.Maj", 
+		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+		url: "https://25maj.azurewebsites.net"
+	});
+});
+
 
 
 
