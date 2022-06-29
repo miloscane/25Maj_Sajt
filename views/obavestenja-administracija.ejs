@@ -70,8 +70,7 @@
 
 		    		document.getElementById("title").value			=	obavestenje.title;
 		    		document.getElementById("date").value			=	obavestenje.date;
-		    		//document.getElementById("mytextarea").value	=	obavestenje.text;
-		    		tinymce.activeEditor.setContent(obavestenje.text);
+		    		tinymce.get('mytextarea').setContent(obavestenje.text);
 		    		console.log(obavestenje.text)
 		    		if(Number(obavestenje.visible)==1){
 		    			document.getElementById("vidljivo").checked	=	true;
@@ -89,7 +88,7 @@
 	<div class="section white">
 		<div class="contentWidth">
 			<div class="adminObavestenja"></div>
-			<!--<script>
+			<script>
 				var obavestenja		=	JSON.parse(<%- JSON.stringify(obavestenja) %>);
 				for(var i=0;i<obavestenja.length;i++){
 					var obavestenjeJson		=	JSON.parse(JSON.stringify(obavestenja[i]));
@@ -109,7 +108,7 @@
 
 					document.getElementsByClassName("adminObavestenja")[0].appendChild(obavestenje);
 				}
-			</script>-->
+			</script>
 		</div>
 	</div>
 

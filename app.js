@@ -40,7 +40,7 @@ http.listen(process.env.PORT, function(){
   console.log('Server Started');
 });
 
-var mainFileVersion	=	1.1;
+var mainFileVersion	=	1.2;
 
 var mongoClient	=	mongo.MongoClient;
 var url	=	process.env.mongourl;
@@ -322,7 +322,7 @@ server.post('/okaci-obavestenje',function(req,res){
 						}else{
 							var obavestenje =	JSON.parse(JSON.stringify(result[0]));
 							obavestenje.title = req.body.title;
-							obavestenje.text 	=	req.body.text;
+							obavestenje.text 	=	req.body.tekst;
 							obavestenje.date 	=	req.body.date;
 							obavestenja.deleteOne({id:obavestenje.id},function(err,deletionResult){
 								if(err){
