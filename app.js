@@ -324,6 +324,11 @@ server.post('/okaci-obavestenje',function(req,res){
 							obavestenje.title = req.body.title;
 							obavestenje.text 	=	req.body.tekst;
 							obavestenje.date 	=	req.body.date;
+							if(req.body.vidljivo){
+								obavestenje.visible 	=	1;
+							}else{
+								obavestenje.visible 	=	0;
+							}
 							obavestenja.deleteOne({id:obavestenje.id},function(err,deletionResult){
 								if(err){
 									console.log(err)
