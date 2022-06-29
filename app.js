@@ -42,14 +42,32 @@ http.listen(process.env.PORT, function(){
 
 var mainFileVersion	=	1.1;
 
+var mongoClient	=	mongo.MongoClient;
+var url	=	"mongodb+srv://mobatec:m0b@tec!@mobatec.zhull.mongodb.net/25Maj?retryWrites=true&w=majority";
+
 server.get('/',function(req,res){
-	res.render('home',{
-		fileVersion: mainFileVersion,
-		title: "SRC 25.Maj",
-		ogtitle: "SRC 25.Maj", 
-		description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
-		image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
-		url: "https://25maj.azurewebsites.net"
+	mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+		if(err){
+			console.log(err)
+		}else{
+			var collection	=	client.db('25Maj').collection('Obavestenja');
+			collection.find({}).toArray(function(err,result){
+				if(err){
+					console.log(err)
+				}else{
+					res.render('home',{
+						fileVersion: mainFileVersion,
+						title: "SRC 25.Maj",
+						ogtitle: "SRC 25.Maj", 
+						description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+						image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+						url: "https://25maj.azurewebsites.net",
+						obavestenja: JSON.stringify(result) 
+					});
+				}
+				client.close();
+			});
+		}
 	});
 });
 
@@ -174,9 +192,158 @@ server.get('/skolica-plivanja',function(req,res){
 	});
 });
 
+server.get('/obavestenja',function(req,res){
+	mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+		if(err){
+			console.log(err)
+		}else{
+			var collection	=	client.db('25Maj').collection('Obavestenja');
+			collection.find({}).toArray(function(err,result){
+				if(err){
+					console.log(err)
+				}else{
+					res.render('obavestenja',{
+						fileVersion: mainFileVersion,
+						title: "SRC 25.Maj",
+						ogtitle: "SRC 25.Maj", 
+						description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+						image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+						url: "https://25maj.azurewebsites.net",
+						obavestenja: JSON.stringify(result) 
+					});
+				}
+				client.close();
+			});
+		}
+	});
+});
+
+server.get('/login',function(req,res){
+	if(req.session.login){
+		res.redirect("/obavestenja-administracija");
+	}else{
+		res.render('login',{
+			fileVersion: mainFileVersion,
+			title: "SRC 25.Maj",
+			ogtitle: "SRC 25.Maj", 
+			description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+			image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+			url: "https://25maj.azurewebsites.net"
+		});
+	}
+	
+});
+
+server.post('/login',function(req,res){
+	if(req.body.email=="info@25maj.rs" && req.body.password=="123456"){
+		req.session.user 	=	"admin";
+		res.redirect("/obavestenja-administracija");
+	}else{
+		res.send("Pogresna sifra ili lozinka, pokusajte ponovo <a href='/login'>ovde</a>.")
+	}
+});
+
+server.get('/logout',function(req,res){
+	if(req.session.user){
+		req.session.destroy(function(){});	
+	}
+	res.redirect("/")
+});
 
 
+server.get('/obavestenja-administracija',function(req,res){
+	if(req.session.user){
+		mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+			if(err){
+				console.log(err)
+			}else{
+				var collection	=	client.db('25Maj').collection('Obavestenja');
+				collection.find({}).toArray(function(err,result){
+					if(err){
+						console.log(err)
+					}else{
+						res.render('obavestenja-administracija',{
+							fileVersion: mainFileVersion,
+							title: "SRC 25.Maj",
+							ogtitle: "SRC 25.Maj", 
+							description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+							image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+							url: "https://25maj.azurewebsites.net",
+							obavestenja: JSON.stringify(result) 
+						});
+					}
+					client.close();
+				});
+			}
+		});
+		
+	}else{
+		res.send("Niste ulogovani. ")
+	}
+	
+});
 
+server.post('/okaci-obavestenje',function(req,res){
+	if(req.session.user){
+		if(req.body.id=="new"){
+			var obavestenje		=	{};
+			obavestenje.title =	req.body.title;
+			obavestenje.date 	=	req.body.date;
+			obavestenje.text 	=	req.body.tekst;
+			if(req.body.vidljivo){
+				obavestenje.visible 	=	1;
+			}else{
+				obavestenje.visible 	=	0;
+			}
+			var currentTime					=	new Date().getTime();
+			obavestenje.id 					=	"obv-"+currentTime;
+			obavestenje.actualtime	=	currentTime;
+			obavestenje.actualdate	=	new Date().getTime();
+			mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+				if(err){
+					console.log(err)
+				}else{
+					var obavestenja		=	client.db('25Maj').collection('Obavestenja');
+					obavestenja.insertOne(obavestenje,function(err,addedResult){
+						client.close();
+						res.redirect('/obavestenja-administracija');
+					});
+				}
+			});
+		}else{
+			mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+				if(err){
+					console.log(err)
+				}else{
+					var obavestenja		=	client.db('25Maj').collection('Obavestenja');
+					obavestenja.find({id:req.body.id}).toArray(function(err,result){
+						if(err){
+							console.log(err)
+						}else{
+							var obavestenje =	JSON.parse(JSON.stringify(result[0]));
+							obavestenje.title = req.body.title;
+							obavestenje.text 	=	req.body.text;
+							obavestenje.date 	=	req.body.date;
+							obavestenja.deleteOne({id:obavestenje.id},function(err,deletionResult){
+								if(err){
+									console.log(err)
+								}else{
+									obavestenja.insertOne(obavestenje,function(err,addedResult){
+										client.close();
+										res.redirect('/obavestenja-administracija');
+									});
+								}
+							});
+						}
+					});
+				}
+			});
+		}
+	}else{
+		res.send('Niste ulogovani pa ne mozete kaciti obavestenja');
+	}
+	
+});
 
 
 

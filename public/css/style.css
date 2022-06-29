@@ -940,5 +940,33 @@ input[type=number] {
 	font-style: italic;
 }
 
+.inputTitle{
+	margin-top: 10px;
+	margin-bottom: 2px;
+	font-size: 26px;
+	font-weight: 600;
+	text-align: center;
+	color: rgb(47,78,176);
+}
+
+.obavesenjeAdmin input{
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+}
+
+.adminObavestenje .blueButton{
+	padding: 5px;
+	color: rgb(255,255,255);
+}
+
+.adminObavestenje{
+	padding: 10px;
+	border: 1px solid rgb(200,200,200);
+	margin: 10px;
+	width: 200px;
+	display: inline-block;
+}
 
 
