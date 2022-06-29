@@ -350,6 +350,32 @@ server.post('/okaci-obavestenje',function(req,res){
 	
 });
 
+server.get('/obavestenje/:id',function(req,res){
+	mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+		if(err){
+			console.log(err)
+		}else{
+			var collection	=	client.db('25Maj').collection('Obavestenja');
+			collection.find({id:req.params.id}).toArray(function(err,result){
+				if(err){
+					console.log(err)
+				}else{
+					res.render('obavestenje',{
+						fileVersion: mainFileVersion,
+						title: "SRC 25.Maj",
+						ogtitle: "SRC 25.Maj", 
+						description: "Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.",
+						image: "https://25maj.azurewebsites.net/images/ogImage.jpg",
+						url: "https://25maj.azurewebsites.net",
+						obavestenje: JSON.stringify(result) 
+					});
+				}
+				client.close();
+			});
+		}
+	});
+});
+
 
 
 
