@@ -309,6 +309,10 @@ input[type=number] {
 	background-color: rgba(255,255,255,1);
 }
 
+.headerNavigation .menuWrap .menuItemWrap:hover .item{
+	color: rgb(47,78,176);
+}
+
 .headerNavigation .menuWrap .menuItemWrap:hover .item a{
 	color: rgb(47,78,176);
 }
@@ -975,7 +979,7 @@ input[type=number] {
 }
 
 .headerContact{
-	font-size: 10px;
+	font-size: 12px;
 	top: 3px;
 	position: fixed;
 	left: 0;
@@ -983,10 +987,15 @@ input[type=number] {
 	text-align: center;
 	color: rgb(255,255,255);
 	z-index: 210;
+	display: none;
 }
 
 .headerContact a{
 	color: rgb(255,255,255);
+}
+
+.contactHeader2{
+	color:rgb(255,255,255);font-size:14px;display:inline-block;vertical-align: middle;
 }
 
 @media screen and (max-width: 950px) {
@@ -1069,6 +1078,14 @@ input[type=number] {
 	.textByImage .textWrap .content{
 		width: 80%;
 		margin: 0 auto;
+		display: block;
+	}
+
+	.contactHeader2{
+		display: none;
+	}
+
+	.headerContact{
 		display: block;
 	}
 }
