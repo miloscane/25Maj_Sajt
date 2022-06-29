@@ -468,6 +468,7 @@ input[type=number] {
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 	width: 300px;
 	margin: 0 20px;
+	margin-bottom: 20px;
 	background-color: rgb(255,255,255);
 	font-size: 18px;
 	padding: 10px;
@@ -969,4 +970,147 @@ input[type=number] {
 	display: inline-block;
 }
 
+.responsiveMenuHandle{
+	display: none !important;
+}
+
+.headerContact{
+	font-size: 10px;
+	top: 3px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: rgb(255,255,255);
+	z-index: 210;
+}
+
+.headerContact a{
+	color: rgb(255,255,255);
+}
+
+@media screen and (max-width: 950px) {
+	.responsiveMenuHandle{
+		display: inline-block !important;
+	}
+
+	.headerNavigation{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.headerNavigation .menuWrap .menu{
+		position: absolute;
+		width: 100vw;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+		top: -502px;
+		background: rgb(47,78,176);
+		background: linear-gradient(180deg, rgba(47,78,176,1) 26%, rgba(24,40,91,1) 100%);
+		-webkit-transition: all ease 0.5s;
+		-moz-transition: all ease 0.5s;
+		-ms-transition: all ease 0.5s;
+		-o-transition: all ease 0.5s;
+		transition: all ease 0.5s;
+	}
+
+	.headerNavigation .menuWrap .menuOpened{
+		top: 101px;
+	}
+
+	.headerNavigation .menuWrap .menuItemWrap{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.headerNavigation .menuWrap .menuItemWrap .subMenu{
+		position: relative;
+		top: 0px;
+	}
+
+	.headerNavigation .menuWrap .menuItemWrap:hover .item{
+		color: rgb(47,78,176);
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.home2Boxes .inline{
+		display: block;
+		margin: 0 auto;
+		width: 85%;
+	}
+
+	.titleIconSeparator .line{
+		width: 75px !important;
+	}
+
+	.textByImage .textWrap{
+		display: table-header-group;
+		width: 100%;
+		text-align: center;
+	}
+
+	.textByImage .imageWrap{
+		width: 100%;
+		display: table-footer-group;
+	}
+
+	.textByImage .imageWrap .image{
+		width: 80%;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.textByImage .textWrap .content{
+		width: 80%;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	.sideBySideText .inline{
+		display: block;
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.headerNavigation .menuWrap .social .itemWrap{
+		width: 30px;
+		height: 30px;
+	}
+
+	.headerNavigation .menuWrap .social .responsiveMenuHandle{
+		width: 40px;
+		height: 40px;
+	}
+
+	.headerNavigation .logoWrap{
+		width: 150px;
+	}
+
+	.headerNavigation .menuWrap{
+		width: calc(100% - 150px);
+	}
+
+	.pageHeaderFixed{
+		top: 76px;
+	}
+
+	.headerSeparator{
+		margin-top: 70px;
+	}
+
+	.headerNavigation .menuWrap .menuOpened{
+		top: 77px;
+	}
+}
 

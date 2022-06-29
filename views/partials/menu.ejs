@@ -14,10 +14,30 @@
 				<div class="itemWrap">
 					<a href="https://instagram.com/bazen_25maj" target="_blank"><img src="/logos/inst.png"></a>
 				</div>
+				<div class="itemWrap responsiveMenuHandle" style="background-color:rgba(0,0,0,0)" data-opened="0" onclick="openMenu(this)">
+					<img id="menuIcon" src="/icons/menu-closed-yellow.png">
+				</div>
+				<script>
+					function openMenu(elem){
+						var menuOpened	=	Number(elem.dataset.opened);
+						if(menuOpened==0){
+							//open the menu
+							document.getElementsByClassName("menu")[0].classList.add("menuOpened")
+							document.getElementById("menuIcon").src = "/icons/menu-opened-yellow.png";
+							elem.dataset.opened = 1;
+						}else{
+							//close the menu
+							document.getElementsByClassName("menu")[0].classList.remove("menuOpened");
+							document.getElementById("menuIcon").src = "/icons/menu-closed-yellow.png";
+							elem.dataset.opened = 0;
+
+						}
+					}
+				</script>
 			</div>
 			<div class="menu">
 				<div class="menuItemWrap">
-					<div class="item"><a href="/">Naslovna</a></div>
+					<div class="item">Naslovna</div>
 					<div class="subMenu">
 						<div class="subMenuItem"><a href="/dokumenti">Dokumenti</a></div>
 						<div class="separator"></div>
@@ -27,7 +47,7 @@
 					</div>
 				</div>
 				<div class="menuItemWrap">
-					<div class="item"><a href="#">Besplatni Programi</a></div>
+					<div class="item">Besplatni Programi</div>
 					<div class="subMenu">
 						<div class="subMenuItem"><a href="/besplatni-programi-deca">Deca</a></div>
 						<div class="separator"></div>
@@ -35,7 +55,7 @@
 					</div>
 				</div>
 				<div class="menuItemWrap">
-					<div class="item"><a href="#">Komercijalni Programi</a></div>
+					<div class="item">Komercijalni Programi</div>
 					<div class="subMenu">
 						<div class="subMenuItem"><a href="/bazeni-na-otvorenom">Bazeni na otvorenom</a></div>
 						<div class="separator"></div>
@@ -60,5 +80,8 @@
 			</div>
 		</div>
 	</div>
-	
+</div>
+
+<div class="headerContact">
+	<a href="tel:+381111234567">011/1234-567</a> | <a href="mailto:info@25maj.rs">info@25maj.rs</a>
 </div>
