@@ -43,7 +43,7 @@ http.listen(process.env.PORT, function(){
 var mainFileVersion	=	1.1;
 
 var mongoClient	=	mongo.MongoClient;
-var url	=	"mongodb+srv://mobatec:m0b@tec!@mobatec.zhull.mongodb.net/25Maj?retryWrites=true&w=majority";
+var url	=	process.env.mongourl;
 
 server.get('/',function(req,res){
 	mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
