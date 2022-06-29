@@ -8,7 +8,41 @@
 				
 			</div>
 			<script>
-				
+				var obavestenja		=	JSON.parse(<%- JSON.stringify(obavestenja) %>);
+				var counter			=	0;
+				for(var i=0;i<obavestenja.length;i++){
+					var obavestenjeJson	=	obavestenja[i];
+					if(Number(obavestenjeJson.visible)==1){
+						
+						var obavestenje	=	document.createElement("DIV");
+						obavestenje.setAttribute("class","obavestenje");
+
+							var date	=	document.createElement("DIV");
+							date.setAttribute("class","date");
+							date.innerHTML = obavestenjeJson.date.split("-")[2]+"."+obavestenjeJson.date.split("-")[1]+obavestenjeJson.date.split("-")[0];
+							obavestenje.appendChild(date);
+
+							var title	=	document.createElement("DIV");
+							title.setAttribute("class","title");
+							title.innerHTML = obavestenjeJson.title;
+							obavestenje.appendChild(title);
+
+							var text	=	document.createElement("DIV");
+							text.setAttribute("class","text");
+							text.innerHTML = obavestenjeJson.text;
+							obavestenje.appendChild(text);
+
+							var buttonWrap	=	document.createElement("DIV");
+							buttonWrap.setAttribute("class","buttonWrap");
+								var button	=	document.createElement("DIV");
+								button.setAttribute("class","button");
+								button.setAttribute("onclick","window.location.href='/obavestenje/"+obavestenjeJson.id+"'");
+								button.innerHTML	=	"Pročitaj";
+								buttonWrap.appendChild(button);
+							obavestenje.appendChild(buttonWrap)
+						document.getElementsByClassName("obavestenja")[0].appendChild(obavestenje);
+					}
+				}
 			</script>
 		</div>
 	</div>
