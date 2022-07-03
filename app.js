@@ -40,7 +40,7 @@ http.listen(process.env.PORT, function(){
   console.log('Server Started');
 });
 
-var mainFileVersion	=	1.6;
+var mainFileVersion	=	new Date().getTime();
 
 var mongoClient	=	mongo.MongoClient;
 var url	=	process.env.mongourl;
