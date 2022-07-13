@@ -528,6 +528,24 @@ input[type=number] {
 	background-repeat: no-repeat;
 }
 
+.videoBackground{
+	position: relative;
+	z-index: 100;
+}
+
+.backgroundVideo{
+	position: absolute;
+	z-index: 90;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+.backgroundVideo video{
+	max-width: 100%;
+}
+
 .obavestenja{
 	text-align: center;
 	font-size: 0;
@@ -561,6 +579,7 @@ input[type=number] {
 	right: 0;
 	height: 30px;
 	background: linear-gradient(180deg, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+	z-index: 110;
 }
 
 .bottomFade{
@@ -570,6 +589,7 @@ input[type=number] {
 	right: 0;
 	height: 30px;
 	background: linear-gradient(0deg, rgba(255,255,255,1) 25%, rgba(255,255,255,0) 100%);
+	z-index: 110;
 }
 
 .sectionTitle{
