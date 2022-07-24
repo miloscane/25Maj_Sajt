@@ -540,17 +540,24 @@ input[type=number] {
 	left: 0;
 	right: 0;
 	width: 100%;
+	overflow: hidden;
 }
 
 .backgroundVideo video{
 	min-height: 110vh;
-	overflow: hidden;
 }
 
 .obavestenja{
 	text-align: center;
 	font-size: 0;
 	padding-bottom: 20px;
+}
+
+.pageHeaderFixed video{
+	height: 100%;
+    /*width: 177.77777778vh; /* 100 * 16 / 9 */
+    min-width: 100%;
+    min-height: 56.25vw;
 }
 
 .obavestenja .obavestenje{
@@ -1241,6 +1248,13 @@ input[type=number] {
 
 
 @media screen and (max-width: 600px) {
+	.pageHeaderFixed video{
+		-webkit-transform: translateX(-25%);
+		-moz-transform: translateX(-25%);
+		-ms-transform: translateX(-25%);
+		-o-transform: translateX(-25%);
+		transform: translateX(-25%);
+	}
 	.sideBySideText .inline{
 		display: block;
 		width: 80%;

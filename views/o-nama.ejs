@@ -1,5 +1,11 @@
 <%- include ("partials/header") -%>
-	<div class="pageHeaderFixed" style="background-image: url(/images/homeHeader.jpg)"></div>
+	<div class="pageHeaderFixed" style="background-image: url(/images/homeHeader.jpg)">
+		<div style="height:600px">
+			<video poster="/videos/dron1.jpg" autoplay loop muted playsinline>
+				<source src="/videos/dron1.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
 	<div class="pageFixedTitle">О НАМА</div>
 	<div class="pageHeaderSpace"></div>
 	<div class="bellowFixedHeader"></div>
@@ -72,13 +78,13 @@
 	<div class="section" style="position: relative;">
 		<div class="topFade"></div>
 		<div class="bottomFade"></div>
-		<div class="backgroundVideo">
+		<div class="backgroundVideo" style="max-height:50vh">
 			<video poster="/videos/water2.jpg" autoplay playsinline muted loop>
 				<source src="/videos/water2.mp4" type="video/mp4">
 			</video>
 		</div>
 		<div class="videoBackground padded">
-			<div class="smallContent padded">
+			<div class="smallContent padded" style="padding:50px 0px">
 				<div class="whiteBoxTransparent">
 					<!--<div class="readingText">
 						Pored tri otvorena bazena i jednog zatvorenog, olimpijskog, u čijem sklopu se nalazi i saunski blok - welness, centar sadrži i salu za dvoranske sportove. U sklopu SRPC funkcionišu razni ugostiteljski objekti - restorani I kafići, dečije igraonice, teretane i drugi razni poslovni objekti.
@@ -125,5 +131,10 @@
 			</div>
 		</div>
 	</div>
-
+	<style>
+		.footer{
+			position: relative;
+			z-index: 2000;
+		}
+	</style>
 <%- include ("partials/footer") -%>
