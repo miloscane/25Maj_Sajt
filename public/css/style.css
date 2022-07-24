@@ -543,7 +543,8 @@ input[type=number] {
 }
 
 .backgroundVideo video{
-	max-width: 100%;
+	min-height: 110vh;
+	overflow: hidden;
 }
 
 .obavestenja{

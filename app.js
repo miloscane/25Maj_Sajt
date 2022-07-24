@@ -40,6 +40,8 @@ http.listen(process.env.PORT, function(){
   console.log('Server Started');
 });
 
+var sifra = process.env.sifra;
+
 var mainFileVersion	=	new Date().getTime();
 
 var mongoClient	=	mongo.MongoClient;
@@ -235,7 +237,7 @@ server.get('/login',function(req,res){
 });
 
 server.post('/login',function(req,res){
-	if(req.body.email=="info@25maj.rs" && req.body.password=="123456"){
+	if(req.body.email=="info@25maj.rs" && req.body.password==sifra){
 		req.session.user 	=	"admin";
 		res.redirect("/obavestenja-administracija");
 	}else{
