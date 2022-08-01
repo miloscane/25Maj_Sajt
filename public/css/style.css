@@ -193,7 +193,7 @@ input[type=number] {
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid rgb(255, 255, 0);
+	border-bottom: 1px solid rgb(47,78,176);
 }
 
 .headerSeparator{
@@ -344,9 +344,9 @@ input[type=number] {
 	text-align: center;
 	padding: 5px;
 	font-weight: 300;
-	border-left: 1px solid rgb(255,255,0);
-	border-right: 1px solid rgb(255,255,0);
-	border-bottom: 1px solid rgb(255,255,0);
+	border-left: 1px solid rgb(47,78,176);
+	border-right: 1px solid rgb(47,78,176);
+	border-bottom: 1px solid rgb(47,78,176);
 	opacity: 1;
 }
 
@@ -380,7 +380,7 @@ input[type=number] {
 .headerNavigation .menuWrap .menuItemWrap .subMenu .separator{
 	width: 50px;
 	height: 2px;
-	background-color: rgb(254,255,0);
+	background-color: rgb(47,78,176);
 	margin: 5px auto;
 }
 
@@ -490,8 +490,8 @@ input[type=number] {
 }
 
 .blueBox:hover{
-	color: rgb(255,255,0);
-	border: 2px solid rgba(255,255,0,1);
+	color: rgb(255,255,255);
+	border: 2px solid rgba(47,78,176,1);
 }
 
 .home2Boxes .inline{
@@ -665,7 +665,7 @@ input[type=number] {
 
 .obavestenja .obavestenje:hover{
 	background-color: rgb(47,78,176);
-	border: 1px solid rgb(255,255,0);
+	border: 1px solid rgb(47,78,176);
 }
 
 .obavestenja .obavestenje:hover .text{
@@ -677,7 +677,7 @@ input[type=number] {
 }
 
 .obavestenja .obavestenje:hover .title{
-	color: rgb(255,255,0);
+	color: rgb(255,255,255);
 }
 
 .subMenuOpened .carret{
@@ -710,7 +710,7 @@ input[type=number] {
 }
 
 .blueButton:hover{
-	border: 1px solid rgb(255,255,0);
+	border: 1px solid rgb(47,78,176);
 }
 
 .blueButton a{
@@ -727,7 +727,7 @@ input[type=number] {
 }
 
 .blueButton a:hover{
-	color: rgb(255,255,0);
+	color: rgb(255,255,255);
 }
 
 .titleIconSeparator{
@@ -824,7 +824,7 @@ input[type=number] {
 }
 
 .newsletter .inline input:focus{
-	border: 2px solid rgb(255,255,0);
+	border: 2px solid rgb(47,78,176);
 	color: rgb(255,255,255);
 	background-color: rgb(47,78,176);
 }
@@ -846,7 +846,7 @@ input[type=number] {
 	background: rgb(47,78,176);
 	background: linear-gradient(180deg, rgba(47,78,176,1) 26%, rgba(24,40,91,1) 100%);
 	color: rgb(255,255,255);
-	border-top: 1px solid rgb(255,255,0);
+	border-top: 1px solid rgb(47,78,176);
 	padding: 20px 0;
 	text-align: center;
 }
@@ -1131,7 +1131,7 @@ input[type=number] {
 }
 
 .contactHeader2 a:hover{
-	color: rgb(255,255,0);
+	color: rgb(255,255,255);
 }
 
 @media screen and (max-width: 950px) {
