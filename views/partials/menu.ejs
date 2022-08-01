@@ -10,24 +10,24 @@
 				</div>
 				<div class="itemWrap">
 					<a href="https://www.facebook.com/bazen25maj/" target="_blank">
-						<img class="icon" src="/logos/fb.png">
-						<img class="cIcon" src="/logos/fb-y.png">
+						<img class="icon" src="/logos/fb.png?<%=fileVersion%>">
+						<img class="cIcon" src="/logos/fb-y.png?<%=fileVersion%>">
 					</a>
 				</div>
 				<div class="itemWrap">
 					<a href="https://twitter.com/bazen25maj" target="_blank">
-						<img class="icon" src="/logos/tw.png">
-						<img class="cIcon" src="/logos/tw-y.png">
+						<img class="icon" src="/logos/tw.png?<%=fileVersion%>">
+						<img class="cIcon" src="/logos/tw-y.png?<%=fileVersion%>">
 					</a>
 				</div>
 				<div class="itemWrap">
 					<a href="https://instagram.com/bazen_25maj" target="_blank">
-						<img class="icon" src="/logos/inst.png">
-						<img class="cIcon" src="/logos/inst-y.png">
+						<img class="icon" src="/logos/inst.png?<%=fileVersion%>">
+						<img class="cIcon" src="/logos/inst-y.png?<%=fileVersion%>">
 					</a>
 				</div>
 				<div class="itemWrap responsiveMenuHandle" style="background-color:rgba(0,0,0,0)" data-opened="0" onclick="openMenu(this)">
-					<img id="menuIcon" src="/icons/menu-closed-yellow.png">
+					<img id="menuIcon" src="/icons/menu-closed-yellow.png?<%=fileVersion%>">
 				</div>
 				<script>
 					function openMenu(elem){
@@ -35,12 +35,12 @@
 						if(menuOpened==0){
 							//open the menu
 							document.getElementsByClassName("menu")[0].classList.add("menuOpened")
-							document.getElementById("menuIcon").src = "/icons/menu-opened-yellow.png";
+							document.getElementById("menuIcon").src = "/icons/menu-opened-yellow.png?<%=fileVersion%>";
 							elem.dataset.opened = 1;
 						}else{
 							//close the menu
 							document.getElementsByClassName("menu")[0].classList.remove("menuOpened");
-							document.getElementById("menuIcon").src = "/icons/menu-closed-yellow.png";
+							document.getElementById("menuIcon").src = "/icons/menu-closed-yellow.png?<%=fileVersion%>";
 							elem.dataset.opened = 0;
 
 						}
