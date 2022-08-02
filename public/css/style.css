@@ -1262,6 +1262,10 @@ input[type=number] {
 		width: 80%;
 		margin: 0 auto;
 	}
+
+	.obavestenja .obavestenje{
+		width: 80%;
+	}
 }
 
 @media screen and (max-width: 500px) {
