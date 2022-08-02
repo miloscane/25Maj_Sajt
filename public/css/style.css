@@ -568,7 +568,7 @@ input[type=number] {
 	border: 1px solid rgb(150,150,150);
 	border-radius: 3px;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-	width: 300px;
+	width: 400px;
 	margin: 0 20px;
 	margin-bottom: 20px;
 	background-color: rgb(255,255,255);
@@ -641,7 +641,7 @@ input[type=number] {
 	color: rgb(100,100,100);
 	text-align: left;
 	overflow: hidden;
-	height: 98px;
+	height: 200px;
 	-webkit-transition: all ease 0.3s;
 	-moz-transition: all ease 0.3s;
 	-ms-transition: all ease 0.3s;
