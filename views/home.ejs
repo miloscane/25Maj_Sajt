@@ -90,15 +90,18 @@
 								date.innerHTML = obavestenjeJson.date.split("-")[2]+"."+obavestenjeJson.date.split("-")[1]+"."+obavestenjeJson.date.split("-")[0]+".";
 								obavestenje.appendChild(date);
 
-								var title	=	document.createElement("DIV");
-								title.setAttribute("class","title");
-								title.innerHTML = obavestenjeJson.title;
-								obavestenje.appendChild(title);
+								var box		=	document.createElement("DIV");
+								box.setAttribute("class","obvBox");
+									var title	=	document.createElement("DIV");
+									title.setAttribute("class","title");
+									title.innerHTML = obavestenjeJson.title;
+									box.appendChild(title);
 
-								var text	=	document.createElement("DIV");
-								text.setAttribute("class","text");
-								text.innerHTML = obavestenjeJson.text;
-								obavestenje.appendChild(text);
+									var text	=	document.createElement("DIV");
+									text.setAttribute("class","text");
+									text.innerHTML = obavestenjeJson.text;
+									box.appendChild(text);
+								obavestenje.appendChild(box);
 
 								var buttonWrap	=	document.createElement("DIV");
 								buttonWrap.setAttribute("class","buttonWrap");
