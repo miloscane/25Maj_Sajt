@@ -1085,6 +1085,23 @@ input[type=number] {
 	margin: 10px;
 	width: 200px;
 	display: inline-block;
+	height: 300px;
+	overflow-y: scroll;
+	position: relative;
+}
+
+
+.adminObavestenje .deletePost{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+	background-color: rgb(220,0,0);
+	color: rgb(255,255,255);
+	padding: 5px;
+	font-size: 16px;
+	font-weight: 700;
+	border-radius: 100%;
 }
 
 .responsiveMenuHandle{

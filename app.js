@@ -352,6 +352,25 @@ server.post('/okaci-obavestenje',function(req,res){
 	
 });
 
+server.post('/obrisi-obavestenje',function(req,res){
+	if(req.session.user){
+		mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
+			if(err){
+				console.log(err)
+			}else{
+				var obavestenja		=	client.db('25Maj').collection('Obavestenja');
+				obavestenja.deleteOne({id:req.body.obavestenjeID},function(err,deletionResult){
+					res.redirect("/obavestenja-administracija")
+				});
+			}
+		});
+
+		
+	}else{
+		res.send('Niste ulogovani pa ne mozete brisati obavestenja');
+	}
+});
+
 server.get('/obavestenje/:id',function(req,res){
 	mongoClient.connect(url,{useUnifiedTopology: true},function(err,client){
 		if(err){

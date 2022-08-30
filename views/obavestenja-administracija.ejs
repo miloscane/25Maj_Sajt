@@ -106,13 +106,28 @@
 						var blueButton	=	document.createElement("DIV");
 						blueButton.setAttribute("class","blueButton");
 						blueButton.innerHTML	=	"Izmeni";
-						blueButton.setAttribute("onclick","editObavestenje('"+obavestenjeJson.id+"')")
+						blueButton.setAttribute("onclick","editObavestenje('"+obavestenjeJson.id+"')");
 						obavestenje.appendChild(blueButton);
+
+						var destroy		=	document.createElement("DIV");
+						destroy.setAttribute("class","deletePost");
+						destroy.setAttribute("onclick","obrisiObavestenje('"+obavestenjeJson.id+"')");
+						destroy.innerHTML	=	"X";
+						obavestenje.appendChild(destroy);
 
 					document.getElementsByClassName("adminObavestenja")[0].appendChild(obavestenje);
 				}
 			</script>
 		</div>
+		<form method="POST" style="display:none" action="/obrisi-obavestenje" id="delete-form">
+			<input type="text" id="destroy-id" name="obavestenjeID">
+		</form>
+		<script>
+			function obrisiObavestenje(obavestenjeID){
+				document.getElementById("destroy-id").value = obavestenjeID;
+				document.getElementById("delete-form").submit();
+			}
+		</script>
 	</div>
 
 
